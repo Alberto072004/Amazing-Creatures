@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ww85745f8ggm" path="res://Assets/InteriorDungeon.png" id="7_r5jw4"]
 [ext_resource type="Texture2D" uid="uid://b3k64s581bv" path="res://Assets/Road.png" id="8_pi06e"]
 [ext_resource type="Texture2D" uid="uid://djxefctr85bgr" path="res://Assets/Interior.png" id="10_is4ij"]
-[ext_resource type="PackedScene" path="res://Scenes/teleport.tscn" id="12_c5cua"]
+[ext_resource type="PackedScene" uid="uid://cgrrtcn1ey2ja" path="res://Scenes/teleport.tscn" id="12_c5cua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pehpj"]
 texture = ExtResource("1_h7jpf")
