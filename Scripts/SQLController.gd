@@ -30,15 +30,12 @@ func createTable() -> void:
 func insertCriatures() -> void:
 	# Comprueba cuántas criaturas hay ya en la tabla
 	var existentes = database.select_rows("Criatures", "id", ["1=1"]) # Si pongo [""] o [] no funcionaba
-	print(existentes)
-	print(existentes.size())
 	if existentes.size() == 20:
 		print("La tabla ya tiene criaturas. No se insertan de nuevo.")
 		return
 	# Si está vacía, insertamos
 	for nombre in criatures:
 		database.insert_row("Criatures", {"name": nombre})
-	
 	print("Criaturas insertadas correctamente.")
 
 
