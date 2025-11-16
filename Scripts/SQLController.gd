@@ -12,6 +12,10 @@ var criatures = [
 	"Rattata", "Raticate"
 ]
 
+var hp = [
+	20, 10, 20, 25, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	database = SQLite.new() #Creamos la Base de datos
@@ -22,20 +26,29 @@ func _ready() -> void:
 
 func createTable() -> void:
 	var criaturesTable = {
-		"id" = {"data_type":"int", "primary_key":true, "not_null":true, "auo_increment":true},
-		"name" = {"data_type":"text"}
+		"id" = {"data_type":"int", "primary_key":true, "not_null":true, "auto_increment":true},
+		"name" = {"data_type":"text"},
+		"hp" = {"data_type":"int"},
+		"attack" = {"data_type":"int"},
+		"defense" = {"data_type":"int"},
+		"speed" = {"data_type":"int"}
 	}
 	database.create_table("Criatures", criaturesTable)
 	
 func insertCriatures() -> void:
 	# Comprueba cuántas criaturas hay ya en la tabla
-	var existentes = database.select_rows("Criatures", "id", ["1=1"]) # Si pongo [""] o [] no funcionaba
+	var existentes = database.select_rows("Criatures", "id", ["1=1"]) # Si pongo [""] o [] no funcionaba. Funciona porque 1=1 es true
 	if existentes.size() == 20:
 		print("La tabla ya tiene criaturas. No se insertan de nuevo.")
 		return
 	# Si está vacía, insertamos
-	for nombre in criatures:
-		database.insert_row("Criatures", {"name": nombre})
+	# for nombre in criatures:
+	#	database.insert_row("Criatures", {"name": nombre, "hp":20})
+	for i in range(criatures.size()):
+		var nombre = criatures[i]
+		var puntos_vida = hp[i]
+		database.insert_row("Criatures", {"name": nombre, "hp": puntos_vida})
+
 	print("Criaturas insertadas correctamente.")
 
 
