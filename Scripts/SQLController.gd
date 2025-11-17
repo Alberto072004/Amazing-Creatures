@@ -103,7 +103,10 @@ func insertMovements() -> void:
 		print("La tabla ya tiene movimientos.")
 		return
 	for i in range(movements.size()):
-		database.insert_row("movements", {"name": movements[i], "damage": movementDamage[i], "type_id": movementTypes[i]})
+		database.insert_row("movements", {
+			"name": movements[i], 
+			"damage": movementDamage[i], 
+			"type_id": movementTypes[i]})
 	print("Movimientos insertados correctamente.")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
