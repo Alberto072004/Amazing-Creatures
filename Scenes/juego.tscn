@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bq2m53wqv6g1v"]
+[gd_scene load_steps=27 format=4 uid="uid://bq2m53wqv6g1v"]
 
 [ext_resource type="Texture2D" uid="uid://dlhwsmlt0y35r" path="res://Assets/grass.png" id="1_h7jpf"]
 [ext_resource type="PackedScene" uid="uid://1s2ryxtvys04" path="res://Scenes/player.tscn" id="1_kbscr"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b3k64s581bv" path="res://Assets/Road.png" id="8_pi06e"]
 [ext_resource type="Texture2D" uid="uid://djxefctr85bgr" path="res://Assets/Interior.png" id="10_is4ij"]
 [ext_resource type="PackedScene" uid="uid://cgrrtcn1ey2ja" path="res://Scenes/teleport.tscn" id="12_c5cua"]
+[ext_resource type="PackedScene" uid="uid://dx41g5miycwaf" path="res://Scenes/npc.tscn" id="13_il20q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pehpj"]
 texture = ExtResource("1_h7jpf")
@@ -9737,6 +9738,9 @@ position = Vector2(2864, 221)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Overworld/StaticBody2D2"]
 position = Vector2(-2309, -866)
 polygon = PackedVector2Array(-113, 118, -91, 225, 357, 225, 401, 136, 342, 188, 344, 206, -62, 202, -62, 184, 349, 187, 401, 128)
+
+[node name="npc" parent="Overworld" instance=ExtResource("13_il20q")]
+position = Vector2(-2065, 449)
 
 [node name="Combat" type="Node2D" parent="."]
 
