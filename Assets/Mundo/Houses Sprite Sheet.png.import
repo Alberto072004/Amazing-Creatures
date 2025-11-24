@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ww85745f8ggm"
-path="res://.godot/imported/InteriorDungeon.png-3f2b169acbf2c1846f45c2cc67f198f4.ctex"
+uid="uid://dcx42addm1xdj"
+path="res://.godot/imported/Houses Sprite Sheet.png-526a18a6eeb8f216a2b893ab513a3ab4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/InteriorDungeon.png"
-dest_files=["res://.godot/imported/InteriorDungeon.png-3f2b169acbf2c1846f45c2cc67f198f4.ctex"]
+source_file="res://Assets/Mundo/Houses Sprite Sheet.png"
+dest_files=["res://.godot/imported/Houses Sprite Sheet.png-526a18a6eeb8f216a2b893ab513a3ab4.ctex"]
 
 [params]
 

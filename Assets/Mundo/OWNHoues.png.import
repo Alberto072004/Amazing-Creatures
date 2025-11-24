@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djxefctr85bgr"
-path="res://.godot/imported/Interior.png-e70cac0afd84675531c4abfe7188ce89.ctex"
+uid="uid://coykwcy2betu7"
+path="res://.godot/imported/OWNHoues.png-15ae372772a9e89e0e3f033e4a286eb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Interior.png"
-dest_files=["res://.godot/imported/Interior.png-e70cac0afd84675531c4abfe7188ce89.ctex"]
+source_file="res://Assets/Mundo/OWNHoues.png"
+dest_files=["res://.godot/imported/OWNHoues.png-15ae372772a9e89e0e3f033e4a286eb3.ctex"]
 
 [params]
 

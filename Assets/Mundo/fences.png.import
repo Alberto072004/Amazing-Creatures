@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsftiwbkf3ly6"
-path="res://.godot/imported/Character_Idle.png-33c080d9c5dc7cd144429c05e96b8ec6.ctex"
+uid="uid://bctydxmcea132"
+path="res://.godot/imported/fences.png-93451238c21931a586b145f1a6b4ae87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character_Idle.png"
-dest_files=["res://.godot/imported/Character_Idle.png-33c080d9c5dc7cd144429c05e96b8ec6.ctex"]
+source_file="res://Assets/Mundo/fences.png"
+dest_files=["res://.godot/imported/fences.png-93451238c21931a586b145f1a6b4ae87.ctex"]
 
 [params]
 

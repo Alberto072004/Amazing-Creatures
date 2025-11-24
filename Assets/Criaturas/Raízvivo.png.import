@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckaa8osoowuin"
-path="res://.godot/imported/objects.png-aa823a50cf8220d8bca81384589701ec.ctex"
+uid="uid://7pqs7liop47g"
+path="res://.godot/imported/Raízvivo.png-082b2c8e4fbc25c7e2e82f55ca53cbfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects.png"
-dest_files=["res://.godot/imported/objects.png-aa823a50cf8220d8bca81384589701ec.ctex"]
+source_file="res://Assets/Criaturas/Raízvivo.png"
+dest_files=["res://.godot/imported/Raízvivo.png-082b2c8e4fbc25c7e2e82f55ca53cbfe.ctex"]
 
 [params]
 

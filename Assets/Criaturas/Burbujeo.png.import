@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coykwcy2betu7"
-path="res://.godot/imported/OWNHoues.png-c72b2605ad5e7007a9b939946df234bb.ctex"
+uid="uid://b8pv2826jvqhp"
+path="res://.godot/imported/Burbujeo.png-acb3738e28375d23b34c3e1cef5b3e2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/OWNHoues.png"
-dest_files=["res://.godot/imported/OWNHoues.png-c72b2605ad5e7007a9b939946df234bb.ctex"]
+source_file="res://Assets/Criaturas/Burbujeo.png"
+dest_files=["res://.godot/imported/Burbujeo.png-acb3738e28375d23b34c3e1cef5b3e2c.ctex"]
 
 [params]
 

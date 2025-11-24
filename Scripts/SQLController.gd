@@ -2,34 +2,38 @@ extends Control
 
 var database : SQLite 
 
+@onready var label: Label = $Label
+@onready var texture_rect: TextureRect = $TextureRect
+
 var criatures = [
-	"Bulbasaur", "Ivysaur", "Venusaur",
-	"Charmander", "Charmeleon", "Charizard",
-	"Squirtle", "Wartortle", "Blastoise",
-	"Caterpie", "Metapod", "Butterfree",
-	"Weedle", "Kakuna", "Beedrill",
-	"Pidgey", "Pidgeotto", "Pidgeot",
-	"Rattata", "Raticate"
+	"Floracorn", "Flamepico", "Aguazurro",
+	"Vinegato", "Hojaferno", "Raízvivo", "Hierbamala",
+	"Cenizorro", "Luzfuego", "Ascuarón", "Escarallama",
+	"Burbujeo", "Nautigato", "Hidromar", "Ardigua"
+]
+
+var imagenes = ["res://Assets/Criaturas/Floracorn.png", "res://Assets/Criaturas/Flamepico.png", "res://Assets/Criaturas/Aguazurro.png",
+	"res://Assets/Criaturas/Vinegato.png", "res://Assets/Criaturas/Hojaferno.png", "res://Assets/Criaturas/Raízvivo.png",
+	"res://Assets/Criaturas/Hierbamala.png", "res://Assets/Criaturas/Cenizorro.png", "res://Assets/Criaturas/Luzfuego.png",
+	"res://Assets/Criaturas/Ascuarón.png", "res://Assets/Criaturas/Escarallama.png", "res://Assets/Criaturas/Burbujeo.png",
+	"res://Assets/Criaturas/Nautigato.png", "res://Assets/Criaturas/Hidromar.png", "res://Assets/Criaturas/Ardigua.png"
 ]
 
 var hp = [
-	20, 10, 20, 25, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+	20, 10, 20, 25, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
 ]
 
 var speed = [
-	30, 35, 25, 15, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+	30, 35, 25, 15, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
 ]
 
 var types = ["Agua", "Fuego", "Planta"]
 
 var criature_types = [
-		3, 3, 3,  # Bulbasaur, Ivysaur, Venusaur
-		2, 2, 2,  # Charmander, Charmeleon, Charizard
-		1, 1, 1,  # Squirtle, Wartortle, Blastoise
-		3, 3, 3,  # Caterpie, Metapod, Butterfree
-		3, 3, 3,  # Weedle, Kakuna, Beedrill
-		3, 3, 3,  # Pidgey, Pidgeotto, Pidgeot
-		3, 3      # Rattata, Raticate
+		3, 2, 1,  
+		3, 3, 3, 3,
+		2, 2, 2, 2,
+		1, 1, 1, 1,    
 	]
 
 var movements = ["Pistola agua", "Hidrobomba", "Ascuas", "Lanzallamas", "Latigo cepa", "Tormenta floral"]
@@ -48,6 +52,10 @@ func _ready() -> void:
 	insertTypes()
 	insertMovements()
 	insertCriatures()
+	var index = 0
+	label.text = criatures[index]
+	var textura = load(imagenes[index])
+	texture_rect.texture = textura
 
 func createTable() -> void:
 	var criaturesTable = {
@@ -85,7 +93,6 @@ func insertCriatures() -> void:
 			"speed": speed[i],
 			"id_type": criature_types[i]
 		})
-
 	print("Criaturas insertadas correctamente.")
 	
 func insertTypes() -> void:

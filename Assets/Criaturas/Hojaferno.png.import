@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcx42addm1xdj"
-path="res://.godot/imported/Houses Sprite Sheet.png-cfdc401d0c98347ec82104d8268437d0.ctex"
+uid="uid://b3tgiwygwmggx"
+path="res://.godot/imported/Hojaferno.png-c509327c259fd594409bc1809ef887bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Houses Sprite Sheet.png"
-dest_files=["res://.godot/imported/Houses Sprite Sheet.png-cfdc401d0c98347ec82104d8268437d0.ctex"]
+source_file="res://Assets/Criaturas/Hojaferno.png"
+dest_files=["res://.godot/imported/Hojaferno.png-c509327c259fd594409bc1809ef887bd.ctex"]
 
 [params]
 

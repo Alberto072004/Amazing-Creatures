@@ -10,3 +10,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 279.0
+offset_right = 576.0
+offset_bottom = 335.0
+text = "Cargando..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 338.0
+offset_right = 514.0
+offset_bottom = 378.0

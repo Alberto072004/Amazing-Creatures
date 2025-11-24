@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm0yconb5ikn7"
-path="res://.godot/imported/NPCHouse.png-e5a0a89d0ecb6caf167182fb5fe27c58.ctex"
+uid="uid://csr36lscf0twq"
+path="res://.godot/imported/Hidromar.png-4206924370aa9625639888da8c09b6be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NPCHouse.png"
-dest_files=["res://.godot/imported/NPCHouse.png-e5a0a89d0ecb6caf167182fb5fe27c58.ctex"]
+source_file="res://Assets/Criaturas/Hidromar.png"
+dest_files=["res://.godot/imported/Hidromar.png-4206924370aa9625639888da8c09b6be.ctex"]
 
 [params]
 

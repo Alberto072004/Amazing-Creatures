@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bctydxmcea132"
-path="res://.godot/imported/fences.png-e585aa48c96deee55afa813f5263acb2.ctex"
+uid="uid://dm0yconb5ikn7"
+path="res://.godot/imported/NPCHouse.png-1f934364178895ad44243ab2c291374c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fences.png"
-dest_files=["res://.godot/imported/fences.png-e585aa48c96deee55afa813f5263acb2.ctex"]
+source_file="res://Assets/Mundo/NPCHouse.png"
+dest_files=["res://.godot/imported/NPCHouse.png-1f934364178895ad44243ab2c291374c.ctex"]
 
 [params]
 

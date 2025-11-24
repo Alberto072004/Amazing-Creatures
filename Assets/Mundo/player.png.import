@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3k64s581bv"
-path="res://.godot/imported/Road.png-9b5cc2e197a413849735a4eff7b6212d.ctex"
+uid="uid://ds6w6u0yylirg"
+path="res://.godot/imported/player.png-2e0dd2278df2552a37b5bf37e6a14bbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Road.png"
-dest_files=["res://.godot/imported/Road.png-9b5cc2e197a413849735a4eff7b6212d.ctex"]
+source_file="res://Assets/Mundo/player.png"
+dest_files=["res://.godot/imported/player.png-2e0dd2278df2552a37b5bf37e6a14bbf.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlhwsmlt0y35r"
-path="res://.godot/imported/grass.png-46bb554aade75a091da98570239d1507.ctex"
+uid="uid://bwuyije6o0hn3"
+path="res://.godot/imported/Luzfuego.png-d50aa967d3dc15bd93a7bc6ecb08879f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/grass.png"
-dest_files=["res://.godot/imported/grass.png-46bb554aade75a091da98570239d1507.ctex"]
+source_file="res://Assets/Criaturas/Luzfuego.png"
+dest_files=["res://.godot/imported/Luzfuego.png-d50aa967d3dc15bd93a7bc6ecb08879f.ctex"]
 
 [params]
 

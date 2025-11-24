@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://onwyaebgdonx"
-path="res://.godot/imported/plains.png-4d515c9f7d33d3909791dd28238ea80c.ctex"
+uid="uid://bvdrc5kf8n3qi"
+path="res://.godot/imported/Ascuarón.png-fb43d557a7821597b675ea463af9793d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/plains.png"
-dest_files=["res://.godot/imported/plains.png-4d515c9f7d33d3909791dd28238ea80c.ctex"]
+source_file="res://Assets/Criaturas/Ascuarón.png"
+dest_files=["res://.godot/imported/Ascuarón.png-fb43d557a7821597b675ea463af9793d.ctex"]
 
 [params]
 
