@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwuyije6o0hn3"
-path="res://.godot/imported/Luzfuego.png-d50aa967d3dc15bd93a7bc6ecb08879f.ctex"
+uid="uid://cubcm54j301ae"
+path="res://.godot/imported/background.png-70119a84a58d4dcd31297a2ecff7416b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Criaturas/Luzfuego.png"
-dest_files=["res://.godot/imported/Luzfuego.png-d50aa967d3dc15bd93a7bc6ecb08879f.ctex"]
+source_file="res://Assets/Mundo/background.png"
+dest_files=["res://.godot/imported/background.png-70119a84a58d4dcd31297a2ecff7416b.ctex"]
 
 [params]
 
