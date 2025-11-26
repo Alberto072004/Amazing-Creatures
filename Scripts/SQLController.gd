@@ -285,3 +285,4 @@ func _on_button_pressed() -> void:
 	
 	# Si dict_ally["current_hp"] = 0 entonces crear en dict_ally los datos de un siguiente aliado
 	# y si no quedan mas, salir de la escena: load_next_ally()
+	
