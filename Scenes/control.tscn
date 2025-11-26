@@ -308,19 +308,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_mft5f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mft5f")
 text = "Latigo cepa"
 
-[node name="Button2" type="Button" parent="PanelAttacks/Attacks"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_colors/font_pressed_color = Color(0.008202022, 0.008202025, 0.008202025, 1)
-theme_override_colors/font_hover_color = Color(0.0035191614, 0.0035191672, 0.0035191851, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_fx7jt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mft5f")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mft5f")
-text = "Tormenta Floral"
-
 [node name="TextBox" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1153.0
@@ -352,3 +339,5 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 17
 text = ">"
+
+[connection signal="pressed" from="PanelAttacks/Attacks/Button" to="." method="_on_button_pressed"]
