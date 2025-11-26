@@ -4,7 +4,6 @@ const PRUEBA = preload("res://dialogues/prueba.dialogue")
 
 var interactuar = false
 
-
 func _ready():
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)

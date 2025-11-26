@@ -9623,7 +9623,7 @@ metadata/_edit_lock_ = true
 [node name="player" parent="Overworld" instance=ExtResource("1_kbscr")]
 z_index = 5
 y_sort_enabled = true
-position = Vector2(-565, -158)
+position = Vector2(-2182, -33)
 
 [node name="Camera2D" type="Camera2D" parent="Overworld/player"]
 position = Vector2(0, 7)
@@ -9741,6 +9741,9 @@ polygon = PackedVector2Array(-113, 118, -91, 225, 357, 225, 401, 136, 342, 188, 
 
 [node name="npc" parent="Overworld" instance=ExtResource("13_il20q")]
 position = Vector2(-2065, 449)
+
+[node name="npc2" parent="Overworld" instance=ExtResource("13_il20q")]
+position = Vector2(-2131, 939)
 
 [node name="Combat" type="Node2D" parent="."]
 
