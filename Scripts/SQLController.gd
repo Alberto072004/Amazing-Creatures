@@ -1,7 +1,6 @@
 extends Control
 
 var database : SQLite 
-
 signal textboxClosed
 
 @onready var Enemy: TextureRect = $EnemyContainer1/Enemy
@@ -13,6 +12,9 @@ signal textboxClosed
 
 var dict_enemy: Dictionary 
 var dict_ally : Dictionary
+
+const max_criaturas_bando : int = 3 # es el número máximo de critaturas por bando
+const muerto: bool = true
 
 var criatures = [
 	"Floracorn", "Flamepico", "Aguazurro",
@@ -56,20 +58,14 @@ func _ready() -> void:
 	#setHealth($EnemyContainer1/ProgressBar, State.current_health, State.max_health)
 	$TextBox.hide()
 	$PanelAttacks.hide()
-	#var index = 0
-	#label.text = criatures[index]
 	
 	load_next_enemy()
 	load_next_ally()
 	
 	texto("Jefe te desafia")
-	await get_tree().create_timer(.25).timeout
-
+	
 	button.text = dict_ally["dict_movement"]["name"]
 	$PanelAttacks.show()
-
-
-
 
 func _input(event: InputEvent) -> void:
 	if(Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and $TextBox.visible:
@@ -247,7 +243,6 @@ func load_next_enemy() -> void:
 	print("Movimiento enemigo ",dict_enemy["num"], " - ",getMovementEnemy(dict_enemy["num"]))
 	dict_enemy["dict_movement"] =  getMovementEnemy(dict_enemy["num"])
 
-
 func load_next_ally() -> void:
 	var numAlly : int
 	if dict_ally == null or dict_ally.is_empty():
@@ -265,25 +260,51 @@ func load_next_ally() -> void:
 	print("Movimiento aliado ",dict_ally["num"], " - ",getMovementAlly(dict_ally["num"]))
 	dict_ally["dict_movement"] =  getMovementAlly(dict_ally["num"])
 
-func _on_button_pressed() -> void:
-	print("Has pulsado el botón que te he visto!!!", dict_ally, dict_enemy)
+func turn_ally() -> int:
+	# sacar una imagen de trueno desde el enemigo al aliado 
 	
-	# sacar una imagen de trueno desde el aliado al enemigo
-	
+	# actualizamos con daños al enemigo
 	dict_enemy["current_hp"] = max(0, dict_enemy["current_hp"] - dict_ally["dict_movement"]["damage"])
 	progress_bar_enemy.get_node("hp").text = "HP: %d/%d" % [dict_enemy["current_hp"], dict_enemy["hp"]]
 	progress_bar_enemy.value = dict_enemy["current_hp"]
 	
-	# Si dict_enemy["current_hp"] = 0 entonces crear en dict_enemy los datos de un siguiente enemigo
-	# y si no quedan mas, salir de la escena: load_next_enemy()
+	if dict_enemy["current_hp"] == 0 :
+		if dict_enemy["num"] == max_criaturas_bando:
+			pass # se acabo lo que se daba, salir de la escena
+		else:
+			load_next_enemy()
+			return muerto
 
-	# sacar una imagen de trueno desde el enemigo al aliado 
+	texto("hay que daño me estás haciendo!!")
+	await get_tree().create_timer(1.25).timeout
 	
+	return !muerto
+
+func turn_enemy() -> void:
+	texto("Te vas a enterar!!")
+	await get_tree().create_timer(1.25).timeout
+
+	# actualizamos con daños al Aliado
 	dict_ally["current_hp"] = max(0, dict_ally["current_hp"] - dict_enemy["dict_movement"]["damage"])
 	progress_bar_ally.get_node("hp").text = "HP: %d/%d" % [dict_ally["current_hp"], dict_ally["hp"]]
 	progress_bar_ally.value = dict_ally["current_hp"]
 	
-	# Si dict_ally["current_hp"] = 0 entonces crear en dict_ally los datos de un siguiente aliado
-	# y si no quedan mas, salir de la escena: load_next_ally()
+	# sacar una imagen de trueno desde el aliado al enemigo
 	
+	if dict_ally["current_hp"] == 0 :
+		if dict_ally["num"] == max_criaturas_bando:
+			pass # se acabo lo que se daba, salir de la escena
+		else:
+			load_next_ally()
+			button.text = dict_ally["dict_movement"]["name"]
+			# si tu has muerto, vuelve a tirar él
+			turn_enemy()
+			
+	$TextBox.hide()
+	emit_signal("textboxClosed")
 	
+func _on_button_pressed() -> void:
+	var esta_muerto = await turn_ally() # Retorna si ha muerto o no
+	
+	if !esta_muerto:
+		turn_enemy()

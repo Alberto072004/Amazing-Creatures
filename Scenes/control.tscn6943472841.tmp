@@ -1,0 +1,343 @@
+[gd_scene load_steps=13 format=3 uid="uid://dl3ioxaiq83gv"]
+
+[ext_resource type="Script" uid="uid://ctsuk3sco46sf" path="res://Scripts/SQLController.gd" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://cubcm54j301ae" path="res://Assets/Mundo/background.png" id="2_cgmvo"]
+[ext_resource type="Texture2D" uid="uid://d20ep8107vb80" path="res://Assets/Criaturas/Escarallama.png" id="3_vh8u0"]
+[ext_resource type="Texture2D" uid="uid://bghmt5g3tqd8" path="res://Assets/Criaturas/Nautipardo.png" id="4_vxodi"]
+[ext_resource type="Texture2D" uid="uid://drc061cmiqq1l" path="res://Assets/Criaturas/Flamepico.png" id="7_qtfct"]
+[ext_resource type="Texture2D" uid="uid://dm071pjnbtx23" path="res://Assets/Criaturas/Aguazurro.png" id="8_0yuog"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpaqk"]
+content_margin_top = 22.0
+bg_color = Color(0.89, 0.11569999, 0.18022509, 1)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.003519166, 0.0035191693, 0.0035191625, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btyrf"]
+bg_color = Color(0.29425177, 0.6552057, 0.08152846, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxodi"]
+bg_color = Color(0.120166436, 0.120166406, 0.120166406, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx7jt"]
+bg_color = Color(0.00566115, 0.0056611523, 0.005661145, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mft5f"]
+bg_color = Color(0.99116415, 0.99116427, 0.99116415, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtfct"]
+bg_color = Color(0.014275216, 0.014275219, 0.014275208, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -296.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 646.0
+texture = ExtResource("2_cgmvo")
+
+[node name="EnemyContainer2" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 156.0
+offset_top = -179.0
+offset_right = 337.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="EnemyContainer2"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wpaqk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_btyrf")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="hp" type="Label" parent="EnemyContainer2/ProgressBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 23.0
+text = "HP: 25/50"
+horizontal_alignment = 1
+
+[node name="Enemy" type="TextureRect" parent="EnemyContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("3_vh8u0")
+
+[node name="EnemyContainer3" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 373.0
+offset_top = -179.0
+offset_right = 554.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="EnemyContainer3"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wpaqk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_btyrf")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="hp" type="Label" parent="EnemyContainer3/ProgressBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 23.0
+text = "HP: 25/50"
+horizontal_alignment = 1
+
+[node name="Enemy" type="TextureRect" parent="EnemyContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("4_vxodi")
+
+[node name="EnemyContainer1" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 221.0
+offset_top = -94.0
+offset_right = 402.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="EnemyContainer1"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wpaqk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_btyrf")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="hp" type="Label" parent="EnemyContainer1/ProgressBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 23.0
+text = "HP: 25/50"
+horizontal_alignment = 1
+
+[node name="Enemy" type="TextureRect" parent="EnemyContainer1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="AllyContainer1" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = 143.0
+offset_right = 62.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="AllyContainer1"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wpaqk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_btyrf")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="hp" type="Label" parent="AllyContainer1/ProgressBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 23.0
+text = "HP: 25/50"
+horizontal_alignment = 1
+
+[node name="Ally" type="TextureRect" parent="AllyContainer1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="AllyContainer2" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = 99.0
+offset_right = 99.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="AllyContainer2"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wpaqk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_btyrf")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="hp" type="Label" parent="AllyContainer2/ProgressBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 23.0
+text = "HP: 25/50"
+horizontal_alignment = 1
+
+[node name="Ally" type="TextureRect" parent="AllyContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("7_qtfct")
+
+[node name="AllyContainer3" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 149.0
+offset_top = 99.0
+offset_right = 330.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="AllyContainer3"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wpaqk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_btyrf")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="hp" type="Label" parent="AllyContainer3/ProgressBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 23.0
+text = "HP: 25/50"
+horizontal_alignment = 1
+
+[node name="Ally" type="TextureRect" parent="AllyContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("8_0yuog")
+
+[node name="PanelAttacks" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -425.0
+offset_right = 728.0
+offset_bottom = 82.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vxodi")
+
+[node name="Attacks" type="HBoxContainer" parent="PanelAttacks"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13139638
+anchor_top = 0.0121951215
+anchor_right = 0.932784
+anchor_bottom = 0.9878049
+offset_left = 67.99997
+offset_right = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="PanelAttacks/Attacks"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(0.008202022, 0.008202025, 0.008202025, 1)
+theme_override_colors/font_hover_color = Color(0.0035191614, 0.0035191672, 0.0035191851, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fx7jt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mft5f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mft5f")
+text = "Latigo cepa"
+
+[node name="TextBox" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 133.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtfct")
+
+[node name="Label" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Batalla contra Jefe"
+
+[node name="Label2" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -42.0
+offset_right = -6.0
+offset_bottom = 39.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 17
+text = ">"
+
+[connection signal="pressed" from="PanelAttacks/Attacks/Button" to="." method="_on_button_pressed"]
