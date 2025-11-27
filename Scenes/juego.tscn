@@ -9623,7 +9623,7 @@ metadata/_edit_lock_ = true
 [node name="player" parent="Overworld" instance=ExtResource("1_kbscr")]
 z_index = 5
 y_sort_enabled = true
-position = Vector2(-2182, -33)
+position = Vector2(-2096, 931)
 
 [node name="Camera2D" type="Camera2D" parent="Overworld/player"]
 position = Vector2(0, 7)
