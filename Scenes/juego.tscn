@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bq2m53wqv6g1v"]
+[gd_scene load_steps=31 format=4 uid="uid://bq2m53wqv6g1v"]
 
 [ext_resource type="Texture2D" uid="uid://dlhwsmlt0y35r" path="res://Assets/Mundo/grass.png" id="1_h7jpf"]
 [ext_resource type="PackedScene" uid="uid://1s2ryxtvys04" path="res://Scenes/player.tscn" id="1_kbscr"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://djxefctr85bgr" path="res://Assets/Mundo/Interior.png" id="10_is4ij"]
 [ext_resource type="PackedScene" uid="uid://cgrrtcn1ey2ja" path="res://Scenes/teleport.tscn" id="12_c5cua"]
 [ext_resource type="PackedScene" uid="uid://dx41g5miycwaf" path="res://Scenes/npc.tscn" id="13_il20q"]
+[ext_resource type="Script" uid="uid://81dr2666solp" path="res://Scripts/npc2.gd" id="14_jhb2u"]
+[ext_resource type="Script" uid="uid://ctkdwxryr46wr" path="res://Scripts/npc3.gd" id="15_237a5"]
+[ext_resource type="Script" uid="uid://hxp0rnl6tsxo" path="res://Scripts/door.gd" id="16_iypdf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pehpj"]
 texture = ExtResource("1_h7jpf")
@@ -93,7 +96,7 @@ texture = ExtResource("2_l8qcm")
 sources/0 = SubResource("TileSetAtlasSource_pehpj")
 sources/1 = SubResource("TileSetAtlasSource_wpuia")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3g55f"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iypdf"]
 texture = ExtResource("3_l8qcm")
 1:0/0 = 0
 2:0/0 = 0
@@ -303,7 +306,7 @@ texture = ExtResource("3_l8qcm")
 10:7/0 = 0
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.956892, -6.4749136, 3.057598, -5.935337, 6.4749146, -3.4173155, 11.151241, 2.8777409, 8, 8, -5.5756207, 8, -9.532513, 5.215904, -9.712372, -2.3381624)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi06e"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwg3i"]
 texture = ExtResource("4_pehpj")
 9:0/size_in_atlas = Vector2i(5, 7)
 9:0/0 = 0
@@ -318,7 +321,7 @@ texture = ExtResource("4_pehpj")
 0:0/0/y_sort_origin = -27
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.9117851, -24.534567, 61.177105, -24.853199, 60.85847, 1.2745247, 2.8676758, 0.63726044)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_is4ij"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2khi"]
 texture = ExtResource("6_f0at8")
 13:2/0 = 0
 14:2/0 = 0
@@ -9217,7 +9220,7 @@ texture = ExtResource("6_f0at8")
 10:96/0/y_sort_origin = -48
 10:96/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.2304153, -21.666893, -2.2304153, -43.333786, 121.398315, -43.652412, 121.07969, -21.66689, 83.48126, -21.985521, 83.79988, -3.186306, 34.73075, -3.5049362, 34.73075, -21.666893)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_il20q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ua078"]
 texture = ExtResource("7_r5jw4")
 0:0/0 = 0
 1:0/0 = 0
@@ -9396,7 +9399,7 @@ texture = ExtResource("7_r5jw4")
 11:5/0 = 0
 11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.8992939, -4.6763268, 1.6187286, -4.856185, 1.978447, 5.3957634, -0.8992939, 5.3957634)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0at8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jd4v6"]
 texture = ExtResource("6_wpuia")
 0:0/0 = 0
 1:0/0 = 0
@@ -9418,7 +9421,7 @@ texture = ExtResource("6_wpuia")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.497635, -4.873226, 3.6549206, -4.974752, 3.756445, 4.162547, -6.2945833, 4.2640724)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5jw4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20ld4"]
 texture = ExtResource("7_3g55f")
 0:0/size_in_atlas = Vector2i(6, 8)
 0:0/0 = 0
@@ -9427,7 +9430,7 @@ texture = ExtResource("7_3g55f")
 0:0/0/y_sort_origin = -46
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.633219, -41.18765, 71.58377, -41.00779, 71.58377, -9.3526535, 8.633219, -9.532513)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhb2u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4u0l"]
 texture = ExtResource("10_is4ij")
 0:0/0 = 0
 1:0/0 = 0
@@ -9503,7 +9506,7 @@ texture = ExtResource("10_is4ij")
 9:8/0 = 0
 9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.935339, -8, 5.3957634, -8, 5.215904, -2.6978807, 5.036045, 0.71943474, -5.2159023, 0.5395775, -6.115196, -2.6978807)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_237a5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n54yo"]
 texture = ExtResource("2_l8qcm")
 0:0/0 = 0
 1:0/0 = 0
@@ -9580,7 +9583,7 @@ texture = ExtResource("2_l8qcm")
 4:11/0 = 0
 5:11/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5cua"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uybqq"]
 texture = ExtResource("8_pi06e")
 0:0/0 = 0
 1:0/0 = 0
@@ -9599,15 +9602,18 @@ texture = ExtResource("8_pi06e")
 [sub_resource type="TileSet" id="TileSet_pi06e"]
 physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 8
-sources/0 = SubResource("TileSetAtlasSource_3g55f")
-sources/1 = SubResource("TileSetAtlasSource_pi06e")
-sources/2 = SubResource("TileSetAtlasSource_f0at8")
-sources/3 = SubResource("TileSetAtlasSource_r5jw4")
-sources/8 = SubResource("TileSetAtlasSource_c5cua")
-sources/12 = SubResource("TileSetAtlasSource_is4ij")
-sources/13 = SubResource("TileSetAtlasSource_il20q")
-sources/4 = SubResource("TileSetAtlasSource_jhb2u")
-sources/5 = SubResource("TileSetAtlasSource_237a5")
+sources/0 = SubResource("TileSetAtlasSource_iypdf")
+sources/1 = SubResource("TileSetAtlasSource_gwg3i")
+sources/2 = SubResource("TileSetAtlasSource_jd4v6")
+sources/3 = SubResource("TileSetAtlasSource_20ld4")
+sources/8 = SubResource("TileSetAtlasSource_uybqq")
+sources/12 = SubResource("TileSetAtlasSource_o2khi")
+sources/13 = SubResource("TileSetAtlasSource_ua078")
+sources/4 = SubResource("TileSetAtlasSource_f4u0l")
+sources/5 = SubResource("TileSetAtlasSource_n54yo")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwg3i"]
+size = Vector2(14, 20)
 
 [node name="Juego" type="Node2D"]
 
@@ -9623,7 +9629,7 @@ metadata/_edit_lock_ = true
 [node name="player" parent="Overworld" instance=ExtResource("1_kbscr")]
 z_index = 5
 y_sort_enabled = true
-position = Vector2(-2096, 931)
+position = Vector2(-2085, -44)
 
 [node name="Camera2D" type="Camera2D" parent="Overworld/player"]
 position = Vector2(0, 7)
@@ -9715,24 +9721,6 @@ position = Vector2(0, -29)
 [node name="Destination" parent="Overworld/Teletransportadores/Teleport8" index="1"]
 position = Vector2(2465, -1578)
 
-[node name="Teleport9" parent="Overworld/Teletransportadores" instance=ExtResource("12_c5cua")]
-position = Vector2(692, -194)
-
-[node name="CollisionShape2D" parent="Overworld/Teletransportadores/Teleport9" index="0"]
-position = Vector2(-0.5, -25)
-
-[node name="Destination" parent="Overworld/Teletransportadores/Teleport9" index="1"]
-position = Vector2(-2868, -289)
-
-[node name="Teleport10" parent="Overworld/Teletransportadores" instance=ExtResource("12_c5cua")]
-position = Vector2(-2173, -416)
-
-[node name="CollisionShape2D" parent="Overworld/Teletransportadores/Teleport10" index="0"]
-position = Vector2(-2, -30)
-
-[node name="Destination" parent="Overworld/Teletransportadores/Teleport10" index="1"]
-position = Vector2(2864, 221)
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="Overworld"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Overworld/StaticBody2D2"]
@@ -9744,8 +9732,28 @@ position = Vector2(-2065, 449)
 
 [node name="npc2" parent="Overworld" instance=ExtResource("13_il20q")]
 position = Vector2(-2131, 939)
+script = ExtResource("14_jhb2u")
+
+[node name="npc3" parent="Overworld" instance=ExtResource("13_il20q")]
+position = Vector2(-2075, 1358)
+script = ExtResource("15_237a5")
+
+[node name="enemy" parent="Overworld" instance=ExtResource("13_il20q")]
+position = Vector2(-2015, -613)
+script = null
+
+[node name="Area2D" type="Area2D" parent="Overworld"]
+position = Vector2(684, -194)
+script = ExtResource("16_iypdf")
+next_scene_path = "res://Scenes/enemy_house.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld/Area2D"]
+position = Vector2(7, -17)
+shape = SubResource("RectangleShape2D_gwg3i")
 
 [node name="Combat" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="Overworld/Area2D" to="Overworld/Area2D" method="_on_body_entered"]
 
 [editable path="Overworld/Teletransportadores/Teleport"]
 [editable path="Overworld/Teletransportadores/Teleport2"]
@@ -9755,5 +9763,3 @@ position = Vector2(-2131, 939)
 [editable path="Overworld/Teletransportadores/Teleport6"]
 [editable path="Overworld/Teletransportadores/Teleport7"]
 [editable path="Overworld/Teletransportadores/Teleport8"]
-[editable path="Overworld/Teletransportadores/Teleport9"]
-[editable path="Overworld/Teletransportadores/Teleport10"]

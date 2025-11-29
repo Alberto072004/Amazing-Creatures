@@ -13,7 +13,8 @@ signal textboxClosed
 var dict_enemy: Dictionary 
 var dict_ally : Dictionary
 
-const max_criaturas_bando : int = 3 # es el número máximo de critaturas por bando
+const max_enemies : int = 6 # el numero de enemigos va del 4 al 6
+const max_allies : int = 3 # el num de aliados va dl 1 al 3
 const muerto: bool = true
 
 var criatures = [
@@ -269,12 +270,23 @@ func turn_ally() -> int:
 	progress_bar_enemy.value = dict_enemy["current_hp"]
 	
 	if dict_enemy["current_hp"] == 0 :
-		if dict_enemy["num"] == max_criaturas_bando:
-			pass # se acabo lo que se daba, salir de la escena
+		if dict_enemy["num"] == max_enemies:
+			GameManager.repetir = true
+			# === ZONA DE VICTORIA Y RETORNO ===
+			texto("¡Has ganado el combate!")
+			await get_tree().create_timer(1.5).timeout
+			
+			# 🚨 USAR la ruta almacenada en el GameManager
+			if GameManager.escena_de_retorno != "":
+				get_tree().change_scene_to_file(GameManager.escena_de_retorno)
+			else:
+				# La ruta NO se guardó.
+				get_tree().change_scene_to_file("res://Scenes/juego.tscn")
+			return muerto
 		else:
 			load_next_enemy()
 			return muerto
-
+	
 	texto("hay que daño me estás haciendo!!")
 	await get_tree().create_timer(1.25).timeout
 	
@@ -292,8 +304,8 @@ func turn_enemy() -> void:
 	# sacar una imagen de trueno desde el aliado al enemigo
 	
 	if dict_ally["current_hp"] == 0 :
-		if dict_ally["num"] == max_criaturas_bando:
-			pass # se acabo lo que se daba, salir de la escena
+		if dict_ally["num"] == max_allies:
+			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 		else:
 			load_next_ally()
 			button.text = dict_ally["dict_movement"]["name"]

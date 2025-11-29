@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ya5sw478ah8j"]
+
+[ext_resource type="Script" uid="uid://cbe3y2tn5erns" path="res://Scripts/dialogo.gd" id="1_crj7h"]
+
+[node name="Historia" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialogo" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 228.0
+offset_top = 483.0
+offset_right = 948.0
+offset_bottom = 605.0
+script = ExtResource("1_crj7h")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+text = "Hola que tal"
