@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://matgnptjifih"
+path="res://.godot/imported/descampado.dialogue-28eb76cc0dbecfc03681930c33d83fd1.tres"
+
+[deps]
+
+source_file="res://dialogues/descampado.dialogue"
+dest_files=["res://.godot/imported/descampado.dialogue-28eb76cc0dbecfc03681930c33d83fd1.tres"]
+
+[params]
+
+defaults=true

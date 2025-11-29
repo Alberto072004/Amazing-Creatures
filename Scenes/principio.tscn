@@ -1,20 +1,20 @@
-[gd_scene load_steps=25 format=4 uid="uid://bmegeb2quksay"]
+[gd_scene load_steps=26 format=4 uid="uid://bt5nib2s1lqon"]
 
-[ext_resource type="Texture2D" uid="uid://onwyaebgdonx" path="res://Assets/Mundo/plains.png" id="1_2e7mp"]
-[ext_resource type="Texture2D" uid="uid://ckaa8osoowuin" path="res://Assets/Mundo/objects.png" id="2_611rc"]
-[ext_resource type="Texture2D" uid="uid://dm0yconb5ikn7" path="res://Assets/Mundo/NPCHouse.png" id="3_lpuxc"]
-[ext_resource type="Texture2D" uid="uid://dcx42addm1xdj" path="res://Assets/Mundo/Houses Sprite Sheet.png" id="4_i7ttt"]
-[ext_resource type="Texture2D" uid="uid://ww85745f8ggm" path="res://Assets/Mundo/InteriorDungeon.png" id="5_h2y1p"]
-[ext_resource type="Texture2D" uid="uid://bctydxmcea132" path="res://Assets/Mundo/fences.png" id="6_8avqj"]
-[ext_resource type="Texture2D" uid="uid://coykwcy2betu7" path="res://Assets/Mundo/OWNHoues.png" id="7_qtdjx"]
-[ext_resource type="Texture2D" uid="uid://djxefctr85bgr" path="res://Assets/Mundo/Interior.png" id="8_m2k5i"]
-[ext_resource type="Texture2D" uid="uid://b3k64s581bv" path="res://Assets/Mundo/Road.png" id="9_h4rlb"]
-[ext_resource type="PackedScene" uid="uid://1s2ryxtvys04" path="res://Scenes/player.tscn" id="10_611rc"]
-[ext_resource type="PackedScene" uid="uid://bnmg1nxvrcxte" path="res://Scenes/dios.tscn" id="11_lpuxc"]
-[ext_resource type="Script" uid="uid://bt8ccqe411or8" path="res://Scripts/dios.gd" id="12_i7ttt"]
+[ext_resource type="Texture2D" uid="uid://onwyaebgdonx" path="res://Assets/Mundo/plains.png" id="1_d161v"]
+[ext_resource type="Script" uid="uid://bh3j5othsos5o" path="res://Scripts/principio.gd" id="1_urquo"]
+[ext_resource type="Texture2D" uid="uid://ckaa8osoowuin" path="res://Assets/Mundo/objects.png" id="2_tegu2"]
+[ext_resource type="Texture2D" uid="uid://dm0yconb5ikn7" path="res://Assets/Mundo/NPCHouse.png" id="3_xinir"]
+[ext_resource type="Texture2D" uid="uid://dcx42addm1xdj" path="res://Assets/Mundo/Houses Sprite Sheet.png" id="4_8he8u"]
+[ext_resource type="Texture2D" uid="uid://ww85745f8ggm" path="res://Assets/Mundo/InteriorDungeon.png" id="5_c0wiq"]
+[ext_resource type="Texture2D" uid="uid://bctydxmcea132" path="res://Assets/Mundo/fences.png" id="6_j71nw"]
+[ext_resource type="Texture2D" uid="uid://coykwcy2betu7" path="res://Assets/Mundo/OWNHoues.png" id="7_jhbd3"]
+[ext_resource type="Texture2D" uid="uid://djxefctr85bgr" path="res://Assets/Mundo/Interior.png" id="8_xc1be"]
+[ext_resource type="Texture2D" uid="uid://b3k64s581bv" path="res://Assets/Mundo/Road.png" id="9_afixf"]
+[ext_resource type="PackedScene" uid="uid://1s2ryxtvys04" path="res://Scenes/player.tscn" id="10_eue5h"]
+[ext_resource type="Script" uid="uid://b400088axsj2d" path="res://Scripts/door3.gd" id="12_d161v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6buhp"]
-texture = ExtResource("1_2e7mp")
+texture = ExtResource("1_d161v")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -88,7 +88,7 @@ texture = ExtResource("1_2e7mp")
 sources/0 = SubResource("TileSetAtlasSource_6buhp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_psybd"]
-texture = ExtResource("2_611rc")
+texture = ExtResource("2_tegu2")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -298,7 +298,7 @@ texture = ExtResource("2_611rc")
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.956892, -6.4749136, 3.057598, -5.935337, 6.4749146, -3.4173155, 11.151241, 2.8777409, 8, 8, -5.5756207, 8, -9.532513, 5.215904, -9.712372, -2.3381624)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ivwd"]
-texture = ExtResource("3_lpuxc")
+texture = ExtResource("3_xinir")
 9:0/size_in_atlas = Vector2i(5, 7)
 9:0/0 = 0
 9:0/0/texture_origin = Vector2i(-32, 48)
@@ -313,7 +313,7 @@ texture = ExtResource("3_lpuxc")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.9117851, -24.534567, 61.177105, -24.853199, 60.85847, 1.2745247, 2.8676758, 0.63726044)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8w4aj"]
-texture = ExtResource("4_i7ttt")
+texture = ExtResource("4_8he8u")
 13:2/0 = 0
 14:2/0 = 0
 32:2/0 = 0
@@ -9212,7 +9212,7 @@ texture = ExtResource("4_i7ttt")
 10:96/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.2304153, -21.666893, -2.2304153, -43.333786, 121.398315, -43.652412, 121.07969, -21.66689, 83.48126, -21.985521, 83.79988, -3.186306, 34.73075, -3.5049362, 34.73075, -21.666893)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dny7n"]
-texture = ExtResource("5_h2y1p")
+texture = ExtResource("5_c0wiq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -9391,7 +9391,7 @@ texture = ExtResource("5_h2y1p")
 11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.8992939, -4.6763268, 1.6187286, -4.856185, 1.978447, 5.3957634, -0.8992939, 5.3957634)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrw8n"]
-texture = ExtResource("6_8avqj")
+texture = ExtResource("6_j71nw")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -9413,7 +9413,7 @@ texture = ExtResource("6_8avqj")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.497635, -4.873226, 3.6549206, -4.974752, 3.756445, 4.162547, -6.2945833, 4.2640724)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rv2vo"]
-texture = ExtResource("7_qtdjx")
+texture = ExtResource("7_jhbd3")
 0:0/size_in_atlas = Vector2i(6, 8)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-40, 56)
@@ -9422,7 +9422,7 @@ texture = ExtResource("7_qtdjx")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.633219, -41.18765, 71.58377, -41.00779, 71.58377, -9.3526535, 8.633219, -9.532513)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2r4rr"]
-texture = ExtResource("8_m2k5i")
+texture = ExtResource("8_xc1be")
 0:3/0 = 0
 5:0/size_in_atlas = Vector2i(2, 3)
 5:0/0 = 0
@@ -9487,7 +9487,7 @@ texture = ExtResource("8_m2k5i")
 9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.115196, -0.5395756, -6.2950554, -0.71943474, -6.4749146, -8, 6.115196, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnx1w"]
-texture = ExtResource("1_2e7mp")
+texture = ExtResource("1_d161v")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -9564,7 +9564,7 @@ texture = ExtResource("1_2e7mp")
 5:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2lu4"]
-texture = ExtResource("9_h4rlb")
+texture = ExtResource("9_afixf")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -9592,7 +9592,11 @@ sources/13 = SubResource("TileSetAtlasSource_dny7n")
 sources/4 = SubResource("TileSetAtlasSource_2r4rr")
 sources/5 = SubResource("TileSetAtlasSource_xnx1w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tegu2"]
+size = Vector2(32, 20)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_urquo")
 
 [node name="Suelo" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAWAAkAAAABAAgAAAAWAAoAAAABAAgAAAAWAAsAAAABAAgAAAAXAAkAAAABAAgAAAAXAAoAAAABAAgAAAAXAAsAAAABAAgAAAAYAAkAAAABAAgAAAAYAAoAAAABAAgAAAAYAAsAAAABAAgAAAAZAAkAAAABAAgAAAAZAAoAAAABAAgAAAAZAAsAAAABAAgAAAAaAAkAAAABAAgAAAAaAAoAAAABAAgAAAAaAAsAAAABAAgAAAAbAAkAAAABAAgAAAAbAAoAAAABAAgAAAAbAAsAAAABAAgAAAAcAAkAAAABAAgAAAAcAAoAAAABAAgAAAAcAAsAAAABAAgAAAAdAAkAAAABAAgAAAAdAAoAAAABAAgAAAAdAAsAAAABAAgAAAAeAAkAAAABAAgAAAAeAAoAAAABAAgAAAAeAAsAAAABAAgAAAAfAAkAAAABAAgAAAAfAAoAAAABAAgAAAAfAAsAAAABAAgAAAAgAAkAAAABAAgAAAAgAAoAAAABAAgAAAAgAAsAAAABAAgAAAAhAAkAAAABAAgAAAAhAAoAAAABAAgAAAAhAAsAAAABAAgAAAAWAAwAAAAAAAgAAAAWAA0AAAAAAAgAAAAWAA4AAAAAAAgAAAAWAA8AAAAAAAgAAAAWABAAAAAAAAgAAAAWABEAAAAAAAgAAAAWABIAAAAAAAgAAAAWABMAAAAAAAgAAAAWABQAAAAAAAgAAAAWABUAAAAAAAgAAAAXAAwAAAAAAAgAAAAXAA0AAAAAAAgAAAAXAA4AAAAAAAgAAAAXAA8AAAAAAAgAAAAXABAAAAAAAAgAAAAXABEAAAAAAAgAAAAXABIAAAAAAAgAAAAXABMAAAAAAAgAAAAXABQAAAAAAAgAAAAXABUAAAAAAAgAAAAYAAwAAAAAAAgAAAAYAA0AAAAAAAgAAAAYAA4AAAAAAAgAAAAYAA8AAAAAAAgAAAAYABAAAAAAAAgAAAAYABEAAAAAAAgAAAAYABIAAAAAAAgAAAAYABMAAAAAAAgAAAAYABQAAAAAAAgAAAAYABUAAAAAAAgAAAAZAAwAAAAAAAgAAAAZAA0AAAAAAAgAAAAZAA4AAAAAAAgAAAAZAA8AAAAAAAgAAAAZABAAAAAAAAgAAAAZABEAAAAAAAgAAAAZABIAAAAAAAgAAAAZABMAAAAAAAgAAAAZABQAAAAAAAgAAAAZABUAAAAAAAgAAAAaAAwAAAAAAAgAAAAaAA0AAAAAAAgAAAAaAA4AAAAAAAgAAAAaAA8AAAAAAAgAAAAaABAAAAAAAAgAAAAaABEAAAAAAAgAAAAaABIAAAAAAAgAAAAaABMAAAAAAAgAAAAaABQAAAAAAAgAAAAaABUAAAAAAAgAAAAbAAwAAAAAAAgAAAAbAA0AAAAAAAgAAAAbAA4AAAAAAAgAAAAbAA8AAAAAAAgAAAAbABAAAAAAAAgAAAAbABEAAAAAAAgAAAAbABIAAAAAAAgAAAAbABMAAAAAAAgAAAAbABQAAAAAAAgAAAAbABUAAAAAAAgAAAAcAAwAAAAAAAgAAAAcAA0AAAAAAAgAAAAcAA4AAAAAAAgAAAAcAA8AAAAAAAgAAAAcABAAAAAAAAgAAAAcABEAAAAAAAgAAAAcABIAAAAAAAgAAAAcABMAAAAAAAgAAAAcABQAAAAAAAgAAAAcABUAAAAAAAgAAAAdAAwAAAAAAAgAAAAdAA0AAAAAAAgAAAAdAA4AAAAAAAgAAAAdAA8AAAAAAAgAAAAdABAAAAAAAAgAAAAdABEAAAAAAAgAAAAdABIAAAAAAAgAAAAdABMAAAAAAAgAAAAdABQAAAAAAAgAAAAdABUAAAAAAAgAAAAeAAwAAAAAAAgAAAAeAA0AAAAAAAgAAAAeAA4AAAAAAAgAAAAeAA8AAAAAAAgAAAAeABAAAAAAAAgAAAAeABEAAAAAAAgAAAAeABIAAAAAAAgAAAAeABMAAAAAAAgAAAAeABQAAAAAAAgAAAAeABUAAAAAAAgAAAAfAAwAAAAAAAgAAAAfAA0AAAAAAAgAAAAfAA4AAAAAAAgAAAAfAA8AAAAAAAgAAAAfABAAAAAAAAgAAAAfABEAAAAAAAgAAAAfABIAAAAAAAgAAAAfABMAAAAAAAgAAAAfABQAAAAAAAgAAAAfABUAAAAAAAgAAAAgAAwAAAAAAAgAAAAgAA0AAAAAAAgAAAAgAA4AAAAAAAgAAAAgAA8AAAAAAAgAAAAgABAAAAAAAAgAAAAgABEAAAAAAAgAAAAgABIAAAAAAAgAAAAgABMAAAAAAAgAAAAgABQAAAAAAAgAAAAgABUAAAAAAAgAAAAhAAwAAAAAAAgAAAAhAA0AAAAAAAgAAAAhAA4AAAAAAAgAAAAhAA8AAAAAAAgAAAAhABAAAAAAAAgAAAAhABEAAAAAAAgAAAAhABIAAAAAAAgAAAAhABMAAAAAAAgAAAAhABQAAAAAAAgAAAAhABUAAAAAAAgAAAA=")
@@ -9608,9 +9612,16 @@ metadata/_edit_lock_ = true
 position = Vector2(458, 248)
 zoom = Vector2(3, 3)
 
-[node name="player" parent="." instance=ExtResource("10_611rc")]
+[node name="player" parent="." instance=ExtResource("10_eue5h")]
 position = Vector2(403, 236)
 
-[node name="npc" parent="." instance=ExtResource("11_lpuxc")]
-position = Vector2(491, 249)
-script = ExtResource("12_i7ttt")
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(416, 377)
+script = ExtResource("12_d161v")
+next_scene_path = "res://Scenes/descampado.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(32, -17)
+shape = SubResource("RectangleShape2D_tegu2")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

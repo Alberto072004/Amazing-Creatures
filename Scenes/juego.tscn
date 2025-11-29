@@ -17,11 +17,11 @@
 [ext_resource type="Script" uid="uid://ctkdwxryr46wr" path="res://Scripts/npc3.gd" id="15_237a5"]
 [ext_resource type="Script" uid="uid://hxp0rnl6tsxo" path="res://Scripts/door.gd" id="16_iypdf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pehpj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iypdf"]
 texture = ExtResource("1_h7jpf")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpuia"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwg3i"]
 texture = ExtResource("2_l8qcm")
 0:0/0 = 0
 1:0/0 = 0
@@ -93,10 +93,10 @@ texture = ExtResource("2_l8qcm")
 5:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_3g55f"]
-sources/0 = SubResource("TileSetAtlasSource_pehpj")
-sources/1 = SubResource("TileSetAtlasSource_wpuia")
+sources/0 = SubResource("TileSetAtlasSource_iypdf")
+sources/1 = SubResource("TileSetAtlasSource_gwg3i")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iypdf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2khi"]
 texture = ExtResource("3_l8qcm")
 1:0/0 = 0
 2:0/0 = 0
@@ -306,7 +306,7 @@ texture = ExtResource("3_l8qcm")
 10:7/0 = 0
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.956892, -6.4749136, 3.057598, -5.935337, 6.4749146, -3.4173155, 11.151241, 2.8777409, 8, 8, -5.5756207, 8, -9.532513, 5.215904, -9.712372, -2.3381624)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwg3i"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ua078"]
 texture = ExtResource("4_pehpj")
 9:0/size_in_atlas = Vector2i(5, 7)
 9:0/0 = 0
@@ -321,7 +321,7 @@ texture = ExtResource("4_pehpj")
 0:0/0/y_sort_origin = -27
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.9117851, -24.534567, 61.177105, -24.853199, 60.85847, 1.2745247, 2.8676758, 0.63726044)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2khi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jd4v6"]
 texture = ExtResource("6_f0at8")
 13:2/0 = 0
 14:2/0 = 0
@@ -9220,7 +9220,7 @@ texture = ExtResource("6_f0at8")
 10:96/0/y_sort_origin = -48
 10:96/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.2304153, -21.666893, -2.2304153, -43.333786, 121.398315, -43.652412, 121.07969, -21.66689, 83.48126, -21.985521, 83.79988, -3.186306, 34.73075, -3.5049362, 34.73075, -21.666893)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ua078"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20ld4"]
 texture = ExtResource("7_r5jw4")
 0:0/0 = 0
 1:0/0 = 0
@@ -9399,7 +9399,7 @@ texture = ExtResource("7_r5jw4")
 11:5/0 = 0
 11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.8992939, -4.6763268, 1.6187286, -4.856185, 1.978447, 5.3957634, -0.8992939, 5.3957634)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jd4v6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4u0l"]
 texture = ExtResource("6_wpuia")
 0:0/0 = 0
 1:0/0 = 0
@@ -9421,7 +9421,7 @@ texture = ExtResource("6_wpuia")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.497635, -4.873226, 3.6549206, -4.974752, 3.756445, 4.162547, -6.2945833, 4.2640724)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20ld4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n54yo"]
 texture = ExtResource("7_3g55f")
 0:0/size_in_atlas = Vector2i(6, 8)
 0:0/0 = 0
@@ -9430,7 +9430,7 @@ texture = ExtResource("7_3g55f")
 0:0/0/y_sort_origin = -46
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.633219, -41.18765, 71.58377, -41.00779, 71.58377, -9.3526535, 8.633219, -9.532513)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4u0l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uybqq"]
 texture = ExtResource("10_is4ij")
 0:0/0 = 0
 1:0/0 = 0
@@ -9506,7 +9506,7 @@ texture = ExtResource("10_is4ij")
 9:8/0 = 0
 9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.935339, -8, 5.3957634, -8, 5.215904, -2.6978807, 5.036045, 0.71943474, -5.2159023, 0.5395775, -6.115196, -2.6978807)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n54yo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2i35"]
 texture = ExtResource("2_l8qcm")
 0:0/0 = 0
 1:0/0 = 0
@@ -9583,7 +9583,7 @@ texture = ExtResource("2_l8qcm")
 4:11/0 = 0
 5:11/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uybqq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1alwa"]
 texture = ExtResource("8_pi06e")
 0:0/0 = 0
 1:0/0 = 0
@@ -9602,15 +9602,15 @@ texture = ExtResource("8_pi06e")
 [sub_resource type="TileSet" id="TileSet_pi06e"]
 physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 8
-sources/0 = SubResource("TileSetAtlasSource_iypdf")
-sources/1 = SubResource("TileSetAtlasSource_gwg3i")
-sources/2 = SubResource("TileSetAtlasSource_jd4v6")
-sources/3 = SubResource("TileSetAtlasSource_20ld4")
-sources/8 = SubResource("TileSetAtlasSource_uybqq")
-sources/12 = SubResource("TileSetAtlasSource_o2khi")
-sources/13 = SubResource("TileSetAtlasSource_ua078")
-sources/4 = SubResource("TileSetAtlasSource_f4u0l")
-sources/5 = SubResource("TileSetAtlasSource_n54yo")
+sources/0 = SubResource("TileSetAtlasSource_o2khi")
+sources/1 = SubResource("TileSetAtlasSource_ua078")
+sources/2 = SubResource("TileSetAtlasSource_f4u0l")
+sources/3 = SubResource("TileSetAtlasSource_n54yo")
+sources/8 = SubResource("TileSetAtlasSource_1alwa")
+sources/12 = SubResource("TileSetAtlasSource_jd4v6")
+sources/13 = SubResource("TileSetAtlasSource_20ld4")
+sources/4 = SubResource("TileSetAtlasSource_uybqq")
+sources/5 = SubResource("TileSetAtlasSource_q2i35")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwg3i"]
 size = Vector2(14, 20)
@@ -9629,7 +9629,7 @@ metadata/_edit_lock_ = true
 [node name="player" parent="Overworld" instance=ExtResource("1_kbscr")]
 z_index = 5
 y_sort_enabled = true
-position = Vector2(-2085, -44)
+position = Vector2(-649, 454)
 
 [node name="Camera2D" type="Camera2D" parent="Overworld/player"]
 position = Vector2(0, 7)
