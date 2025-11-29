@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnmg1nxvrcxte"]
+
+[ext_resource type="Script" uid="uid://bgxh5pffm3cm3" path="res://Scripts/npc.gd" id="1_nlo67"]
+[ext_resource type="Texture2D" uid="uid://dmyo2kottupwy" path="res://Assets/Criaturas/Dios.png" id="1_v7wu6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxsvc"]
+radius = 13.0
+height = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxsvc"]
+radius = 17.0
+
+[node name="npc" type="Node2D"]
+script = ExtResource("1_nlo67")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.9604645e-08, 0)
+scale = Vector2(0.41666663, 0.32291666)
+texture = ExtResource("1_v7wu6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_xxsvc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xxsvc")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bmegeb2quksay"]
+[gd_scene load_steps=26 format=4 uid="uid://bmegeb2quksay"]
 
 [ext_resource type="Texture2D" uid="uid://onwyaebgdonx" path="res://Assets/Mundo/plains.png" id="1_2e7mp"]
 [ext_resource type="Texture2D" uid="uid://ckaa8osoowuin" path="res://Assets/Mundo/objects.png" id="2_611rc"]
@@ -10,6 +10,42 @@
 [ext_resource type="Texture2D" uid="uid://djxefctr85bgr" path="res://Assets/Mundo/Interior.png" id="8_m2k5i"]
 [ext_resource type="Texture2D" uid="uid://b3k64s581bv" path="res://Assets/Mundo/Road.png" id="9_h4rlb"]
 [ext_resource type="PackedScene" uid="uid://1s2ryxtvys04" path="res://Scenes/player.tscn" id="10_611rc"]
+[ext_resource type="PackedScene" uid="uid://bnmg1nxvrcxte" path="res://Scenes/dios.tscn" id="11_lpuxc"]
+[ext_resource type="Script" uid="uid://bt8ccqe411or8" path="res://Scripts/dios.gd" id="12_i7ttt"]
+
+[sub_resource type="GDScript" id="GDScript_i7ttt"]
+script/source = "extends Node2D
+
+const FINAL = preload(\"res://dialogues/final.dialogue\")
+
+var interactuar = false
+
+func _ready():
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+
+func _process(delta):
+	if interactuar and Input.is_action_just_pressed(\"ui_accept\") and not GameManager.activo:
+		DialogueManager.show_dialogue_balloon(FINAL, \"start\")
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	interactuar = true
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	interactuar = false
+	pass # Replace with function body.
+
+func _on_dialogue_started(dialogue):
+	GameManager.activo = true
+
+func _on_dialogue_ended(dialogue):
+	await get_tree().create_timer(0.2).timeout
+	GameManager.activo = false
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6buhp"]
 texture = ExtResource("1_2e7mp")
@@ -9591,6 +9627,7 @@ sources/4 = SubResource("TileSetAtlasSource_2r4rr")
 sources/5 = SubResource("TileSetAtlasSource_xnx1w")
 
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_i7ttt")
 
 [node name="Suelo" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAWAAkAAAABAAgAAAAWAAoAAAABAAgAAAAWAAsAAAABAAgAAAAXAAkAAAABAAgAAAAXAAoAAAABAAgAAAAXAAsAAAABAAgAAAAYAAkAAAABAAgAAAAYAAoAAAABAAgAAAAYAAsAAAABAAgAAAAZAAkAAAABAAgAAAAZAAoAAAABAAgAAAAZAAsAAAABAAgAAAAaAAkAAAABAAgAAAAaAAoAAAABAAgAAAAaAAsAAAABAAgAAAAbAAkAAAABAAgAAAAbAAoAAAABAAgAAAAbAAsAAAABAAgAAAAcAAkAAAABAAgAAAAcAAoAAAABAAgAAAAcAAsAAAABAAgAAAAdAAkAAAABAAgAAAAdAAoAAAABAAgAAAAdAAsAAAABAAgAAAAeAAkAAAABAAgAAAAeAAoAAAABAAgAAAAeAAsAAAABAAgAAAAfAAkAAAABAAgAAAAfAAoAAAABAAgAAAAfAAsAAAABAAgAAAAgAAkAAAABAAgAAAAgAAoAAAABAAgAAAAgAAsAAAABAAgAAAAhAAkAAAABAAgAAAAhAAoAAAABAAgAAAAhAAsAAAABAAgAAAAWAAwAAAAAAAgAAAAWAA0AAAAAAAgAAAAWAA4AAAAAAAgAAAAWAA8AAAAAAAgAAAAWABAAAAAAAAgAAAAWABEAAAAAAAgAAAAWABIAAAAAAAgAAAAWABMAAAAAAAgAAAAWABQAAAAAAAgAAAAWABUAAAAAAAgAAAAXAAwAAAAAAAgAAAAXAA0AAAAAAAgAAAAXAA4AAAAAAAgAAAAXAA8AAAAAAAgAAAAXABAAAAAAAAgAAAAXABEAAAAAAAgAAAAXABIAAAAAAAgAAAAXABMAAAAAAAgAAAAXABQAAAAAAAgAAAAXABUAAAAAAAgAAAAYAAwAAAAAAAgAAAAYAA0AAAAAAAgAAAAYAA4AAAAAAAgAAAAYAA8AAAAAAAgAAAAYABAAAAAAAAgAAAAYABEAAAAAAAgAAAAYABIAAAAAAAgAAAAYABMAAAAAAAgAAAAYABQAAAAAAAgAAAAYABUAAAAAAAgAAAAZAAwAAAAAAAgAAAAZAA0AAAAAAAgAAAAZAA4AAAAAAAgAAAAZAA8AAAAAAAgAAAAZABAAAAAAAAgAAAAZABEAAAAAAAgAAAAZABIAAAAAAAgAAAAZABMAAAAAAAgAAAAZABQAAAAAAAgAAAAZABUAAAAAAAgAAAAaAAwAAAAAAAgAAAAaAA0AAAAAAAgAAAAaAA4AAAAAAAgAAAAaAA8AAAAAAAgAAAAaABAAAAAAAAgAAAAaABEAAAAAAAgAAAAaABIAAAAAAAgAAAAaABMAAAAAAAgAAAAaABQAAAAAAAgAAAAaABUAAAAAAAgAAAAbAAwAAAAAAAgAAAAbAA0AAAAAAAgAAAAbAA4AAAAAAAgAAAAbAA8AAAAAAAgAAAAbABAAAAAAAAgAAAAbABEAAAAAAAgAAAAbABIAAAAAAAgAAAAbABMAAAAAAAgAAAAbABQAAAAAAAgAAAAbABUAAAAAAAgAAAAcAAwAAAAAAAgAAAAcAA0AAAAAAAgAAAAcAA4AAAAAAAgAAAAcAA8AAAAAAAgAAAAcABAAAAAAAAgAAAAcABEAAAAAAAgAAAAcABIAAAAAAAgAAAAcABMAAAAAAAgAAAAcABQAAAAAAAgAAAAcABUAAAAAAAgAAAAdAAwAAAAAAAgAAAAdAA0AAAAAAAgAAAAdAA4AAAAAAAgAAAAdAA8AAAAAAAgAAAAdABAAAAAAAAgAAAAdABEAAAAAAAgAAAAdABIAAAAAAAgAAAAdABMAAAAAAAgAAAAdABQAAAAAAAgAAAAdABUAAAAAAAgAAAAeAAwAAAAAAAgAAAAeAA0AAAAAAAgAAAAeAA4AAAAAAAgAAAAeAA8AAAAAAAgAAAAeABAAAAAAAAgAAAAeABEAAAAAAAgAAAAeABIAAAAAAAgAAAAeABMAAAAAAAgAAAAeABQAAAAAAAgAAAAeABUAAAAAAAgAAAAfAAwAAAAAAAgAAAAfAA0AAAAAAAgAAAAfAA4AAAAAAAgAAAAfAA8AAAAAAAgAAAAfABAAAAAAAAgAAAAfABEAAAAAAAgAAAAfABIAAAAAAAgAAAAfABMAAAAAAAgAAAAfABQAAAAAAAgAAAAfABUAAAAAAAgAAAAgAAwAAAAAAAgAAAAgAA0AAAAAAAgAAAAgAA4AAAAAAAgAAAAgAA8AAAAAAAgAAAAgABAAAAAAAAgAAAAgABEAAAAAAAgAAAAgABIAAAAAAAgAAAAgABMAAAAAAAgAAAAgABQAAAAAAAgAAAAgABUAAAAAAAgAAAAhAAwAAAAAAAgAAAAhAA0AAAAAAAgAAAAhAA4AAAAAAAgAAAAhAA8AAAAAAAgAAAAhABAAAAAAAAgAAAAhABEAAAAAAAgAAAAhABIAAAAAAAgAAAAhABMAAAAAAAgAAAAhABQAAAAAAAgAAAAhABUAAAAAAAgAAAA=")
@@ -9602,9 +9639,13 @@ tile_map_data = PackedByteArray("AACA//n/BQABAAkAAACA//r/BQABAAkAAACA//v/BQABAAk
 tile_set = SubResource("TileSet_v8g2t")
 metadata/_edit_lock_ = true
 
-[node name="player" parent="." instance=ExtResource("10_611rc")]
-position = Vector2(417, 244)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(458, 248)
 zoom = Vector2(3, 3)
+
+[node name="player" parent="." instance=ExtResource("10_611rc")]
+position = Vector2(403, 236)
+
+[node name="npc" parent="." instance=ExtResource("11_lpuxc")]
+position = Vector2(491, 249)
+script = ExtResource("12_i7ttt")

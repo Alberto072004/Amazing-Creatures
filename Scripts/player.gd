@@ -9,7 +9,6 @@ var direction = "none"
 func _physics_process(delta):
 	if GameManager.activo:
 		return
-
 	player_movement(delta)
 
 func player_movement(delta):

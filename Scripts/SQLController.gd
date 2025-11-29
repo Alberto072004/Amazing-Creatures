@@ -69,7 +69,7 @@ func _ready() -> void:
 	$PanelAttacks.show()
 
 func _input(event: InputEvent) -> void:
-	if(Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and $TextBox.visible:
+	if(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and $TextBox.visible:
 		$TextBox.hide()
 		emit_signal("textboxClosed")
 

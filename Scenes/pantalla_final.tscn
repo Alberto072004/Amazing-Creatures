@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh8s4agvb3yv7"]
+
+[ext_resource type="Script" uid="uid://bc5lsrvuirxq3" path="res://Scripts/pantalla_final.gd" id="1_4v544"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x0ut"]
+bg_color = Color(0.5417382, 0.0509353, 0.021975923, 1)
+
+[node name="PantallaFinal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4v544")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 4.0
+offset_right = 651.0
+offset_bottom = 337.0
+theme_override_font_sizes/font_size = 120
+text = "FIN
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 377.0
+offset_right = 456.0
+offset_bottom = 479.0
+theme_override_colors/font_hover_color = Color(0.92928, 0.99, 0.079199985, 1)
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_8x0ut")
+text = "Main Menu"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 377.0
+offset_right = 1010.0
+offset_bottom = 479.0
+theme_override_colors/font_hover_color = Color(0.92928, 0.99, 0.079199985, 1)
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_8x0ut")
+text = "Exit
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
