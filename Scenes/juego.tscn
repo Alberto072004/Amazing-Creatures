@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=4 uid="uid://bq2m53wqv6g1v"]
+[gd_scene load_steps=33 format=4 uid="uid://bq2m53wqv6g1v"]
 
 [ext_resource type="Texture2D" uid="uid://dlhwsmlt0y35r" path="res://Assets/Mundo/grass.png" id="1_h7jpf"]
 [ext_resource type="PackedScene" uid="uid://1s2ryxtvys04" path="res://Scenes/player.tscn" id="1_kbscr"]
+[ext_resource type="Script" uid="uid://bs8ch3yq1e5ux" path="res://Scripts/overworld.gd" id="1_o2khi"]
 [ext_resource type="Texture2D" uid="uid://onwyaebgdonx" path="res://Assets/Mundo/plains.png" id="2_l8qcm"]
 [ext_resource type="Texture2D" uid="uid://ckaa8osoowuin" path="res://Assets/Mundo/objects.png" id="3_l8qcm"]
 [ext_resource type="Texture2D" uid="uid://dm0yconb5ikn7" path="res://Assets/Mundo/NPCHouse.png" id="4_pehpj"]
@@ -16,6 +17,7 @@
 [ext_resource type="Script" uid="uid://81dr2666solp" path="res://Scripts/npc2.gd" id="14_jhb2u"]
 [ext_resource type="Script" uid="uid://ctkdwxryr46wr" path="res://Scripts/npc3.gd" id="15_237a5"]
 [ext_resource type="Script" uid="uid://hxp0rnl6tsxo" path="res://Scripts/door.gd" id="16_iypdf"]
+[ext_resource type="AudioStream" uid="uid://dj27g5xm8ndys" path="res://Music/adrihuwu-mining-and-crafting-209104.mp3" id="18_ua078"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iypdf"]
 texture = ExtResource("1_h7jpf")
@@ -9619,6 +9621,7 @@ size = Vector2(14, 20)
 
 [node name="Overworld" type="Node2D" parent="."]
 y_sort_enabled = true
+script = ExtResource("1_o2khi")
 
 [node name="Suelo" type="TileMapLayer" parent="Overworld"]
 z_index = -5
@@ -9751,7 +9754,10 @@ next_scene_path = "res://Scenes/enemy_house.tscn"
 position = Vector2(7, -17)
 shape = SubResource("RectangleShape2D_gwg3i")
 
-[node name="Combat" type="Node2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Overworld"]
+stream = ExtResource("18_ua078")
+volume_db = -15.266
+autoplay = true
 
 [connection signal="body_entered" from="Overworld/Area2D" to="Overworld/Area2D" method="_on_body_entered"]
 

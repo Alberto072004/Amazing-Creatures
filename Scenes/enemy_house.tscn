@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://jvung1tyw5pw"]
+[gd_scene load_steps=30 format=4 uid="uid://jvung1tyw5pw"]
 
 [ext_resource type="Texture2D" uid="uid://onwyaebgdonx" path="res://Assets/Mundo/plains.png" id="1_jeb3y"]
 [ext_resource type="Texture2D" uid="uid://ckaa8osoowuin" path="res://Assets/Mundo/objects.png" id="2_v3ncp"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://1s2ryxtvys04" path="res://Scenes/player.tscn" id="10_v3ncp"]
 [ext_resource type="Script" uid="uid://dscuuy6qbd4sb" path="res://Scripts/enemy.gd" id="11_vma0f"]
 [ext_resource type="Script" uid="uid://dc4amuf3t4brj" path="res://Scripts/door2.gd" id="13_1jnoi"]
+[ext_resource type="Texture2D" uid="uid://dmyo2kottupwy" path="res://Assets/Criaturas/Dios.png" id="14_qrdfc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jnoi"]
 texture = ExtResource("1_jeb3y")
@@ -9599,6 +9600,9 @@ size = Vector2(327, 52)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jnoi"]
 size = Vector2(64, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrdfc"]
+size = Vector2(37, 21)
+
 [node name="EnemyHouse" type="Node2D"]
 
 [node name="Suelo" type="TileMapLayer" parent="."]
@@ -9638,5 +9642,17 @@ shape = SubResource("RectangleShape2D_1jnoi")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(606, 344)
 zoom = Vector2(2, 2)
+
+[node name="Dios" type="Sprite2D" parent="."]
+position = Vector2(707.99994, 288.25003)
+scale = Vector2(0.5208334, 0.3802088)
+texture = ExtResource("14_qrdfc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(684, 278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(25.5, 10.5)
+shape = SubResource("RectangleShape2D_qrdfc")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://b3k64s581bv" path="res://Assets/Mundo/Road.png" id="9_h4rlb"]
 [ext_resource type="PackedScene" uid="uid://1s2ryxtvys04" path="res://Scenes/player.tscn" id="10_611rc"]
 [ext_resource type="PackedScene" uid="uid://bnmg1nxvrcxte" path="res://Scenes/dios.tscn" id="11_lpuxc"]
-[ext_resource type="Script" uid="uid://bt8ccqe411or8" path="res://Scripts/dios.gd" id="12_i7ttt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6buhp"]
 texture = ExtResource("1_2e7mp")
@@ -9592,6 +9591,9 @@ sources/13 = SubResource("TileSetAtlasSource_dny7n")
 sources/4 = SubResource("TileSetAtlasSource_2r4rr")
 sources/5 = SubResource("TileSetAtlasSource_xnx1w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpuxc"]
+size = Vector2(33, 20)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Suelo" type="TileMapLayer" parent="."]
@@ -9613,4 +9615,10 @@ position = Vector2(403, 236)
 
 [node name="npc" parent="." instance=ExtResource("11_lpuxc")]
 position = Vector2(491, 249)
-script = ExtResource("12_i7ttt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(427, 349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(20.5, 12)
+shape = SubResource("RectangleShape2D_lpuxc")

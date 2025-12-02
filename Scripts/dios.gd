@@ -29,8 +29,4 @@ func _on_dialogue_started(dialogue):
 func _on_dialogue_ended(dialogue):
 	await get_tree().create_timer(0.2).timeout
 	GameManager.activo = false
-	if not GameManager.repetir:
-		# Guarda la ruta antes de ir al combate
-		GameManager.escena_de_retorno = get_tree().current_scene.scene_file_path
-		# Ir a la escena de combate
-		get_tree().change_scene_to_file("res://Scenes/pantalla_final.tscn")
+	get_tree().change_scene_to_file("res://Scenes/pantalla_final.tscn")

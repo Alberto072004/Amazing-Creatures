@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl3ioxaiq83gv"]
+[gd_scene load_steps=10 format=3 uid="uid://dl3ioxaiq83gv"]
 
 [ext_resource type="Script" uid="uid://ctsuk3sco46sf" path="res://Scripts/SQLController.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://cubcm54j301ae" path="res://Assets/Mundo/background.png" id="2_cgmvo"]
+[ext_resource type="AudioStream" uid="uid://dwwjwu6tkrj72" path="res://Music/0-top-battle-game-bgm-264625.mp3" id="3_vh8u0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpaqk"]
 content_margin_top = 22.0
@@ -191,5 +192,10 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 17
 text = ">"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vh8u0")
+volume_db = -9.541
+autoplay = true
 
 [connection signal="pressed" from="PanelAttacks/Attacks/Button" to="." method="_on_button_pressed"]
