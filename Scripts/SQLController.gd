@@ -10,6 +10,8 @@ signal textboxClosed
 @onready var progress_bar_ally: ProgressBar = $AllyContainer1/ProgressBar
 @onready var button: Button = $PanelAttacks/Attacks/Button
 
+var puede_pulsar = true
+
 var dict_enemy: Dictionary 
 var dict_ally : Dictionary
 
@@ -69,7 +71,7 @@ func _ready() -> void:
 	$PanelAttacks.show()
 
 func _input(event: InputEvent) -> void:
-	if(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and $TextBox.visible:
+	if(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and $TextBox.visible and puede_pulsar:
 		$TextBox.hide()
 		emit_signal("textboxClosed")
 
@@ -124,20 +126,10 @@ func getAlly(numId: int) -> Dictionary:
 
 func getCriature(id_a_buscar: int) -> Dictionary:
 	var query = "SELECT hp, image FROM criatures WHERE id = " + str(id_a_buscar)
-
 	var query_success = database.query(query)
 	if query_success == true:
 		var result_data = database.query_result
-		
-		#print("Consulta exitosa para ID:", id_a_buscar)
-		#print("Tipo de datos (result_data):", typeof(result_data))
-		#print("Número de filas:", result_data.size())
-		
 		if result_data.size() > 0:
-			#var hp_value = result_data[0]["hp"]
-			##print("Se encontró la criatura con hp:", hp_value)
-			#return hp_value
-			
 			# 1. Obtenemos la única fila de resultados (que es un Dictionary)
 			var row: Dictionary = result_data[0]
 			
@@ -264,6 +256,9 @@ func load_next_ally() -> void:
 func turn_ally() -> int:
 	# sacar una imagen de trueno desde el enemigo al aliado 
 	
+	# esto es para que no pueda pulsar una tecla para saltarse los textos
+	puede_pulsar = false
+	
 	# actualizamos con daños al enemigo
 	dict_enemy["current_hp"] = max(0, dict_enemy["current_hp"] - dict_ally["dict_movement"]["damage"])
 	progress_bar_enemy.get_node("hp").text = "HP: %d/%d" % [dict_enemy["current_hp"], dict_enemy["hp"]]
@@ -282,14 +277,21 @@ func turn_ally() -> int:
 			else:
 				# La ruta NO se guardó.
 				get_tree().change_scene_to_file("res://Scenes/juego.tscn")
+			# esto es para que pueda pulsar una tecla para saltarse los textos
+			puede_pulsar = true
 			return muerto
 		else:
 			load_next_enemy()
+			# esto es para que pueda pulsar una tecla para saltarse los textos
+			puede_pulsar = true
 			return muerto
 	
 	texto("hay que daño me estás haciendo!!")
 	await get_tree().create_timer(1.25).timeout
-	
+
+	# esto es para que pueda pulsar una tecla para saltarse los textos
+	puede_pulsar = true
+
 	return !muerto
 
 func turn_enemy() -> void:
