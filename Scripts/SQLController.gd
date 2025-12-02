@@ -129,7 +129,7 @@ func getCriature(id_a_buscar: int) -> Dictionary:
 	if query_success == true:
 		var result_data = database.query_result
 		
-		#print("✅ Consulta exitosa para ID:", id_a_buscar)
+		#print("Consulta exitosa para ID:", id_a_buscar)
 		#print("Tipo de datos (result_data):", typeof(result_data))
 		#print("Número de filas:", result_data.size())
 		
