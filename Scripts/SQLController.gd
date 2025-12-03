@@ -57,8 +57,6 @@ func _ready() -> void:
 	insertTypes()
 	insertMovements()
 	insertCriatures()
-	#updateLifeLabel(0)
-	#setHealth($EnemyContainer1/ProgressBar, State.current_health, State.max_health)
 	$TextBox.hide()
 	$PanelAttacks.hide()
 	
@@ -286,7 +284,7 @@ func turn_ally() -> int:
 			puede_pulsar = true
 			return muerto
 	
-	texto("hay que daño me estás haciendo!!")
+	texto("El enemigo ha recibido daño")
 	await get_tree().create_timer(1.25).timeout
 
 	# esto es para que pueda pulsar una tecla para saltarse los textos
@@ -295,7 +293,7 @@ func turn_ally() -> int:
 	return !muerto
 
 func turn_enemy() -> void:
-	texto("Te vas a enterar!!")
+	texto("Enemigo Jose: Te vas a enterar!!")
 	await get_tree().create_timer(1.25).timeout
 
 	# actualizamos con daños al Aliado
