@@ -1,10 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://baohxuwlpb31o"]
+[gd_scene load_steps=7 format=3 uid="uid://baohxuwlpb31o"]
 
-[ext_resource type="Texture2D" uid="uid://cubcm54j301ae" path="res://Assets/Mundo/background.png" id="1_28flt"]
 [ext_resource type="Script" uid="uid://cywa7ax7gwdby" path="res://Scripts/main_menu.gd" id="1_48xlc"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48xlc"]
-texture = ExtResource("1_28flt")
+[ext_resource type="Texture2D" uid="uid://tmavntot5bph" path="res://Assets/Mundo/bg_1.png" id="2_48xlc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
 bg_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
@@ -41,14 +38,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_48xlc")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_48xlc")
+texture = ExtResource("2_48xlc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
