@@ -15,8 +15,8 @@ var puede_pulsar = true
 var dict_enemy: Dictionary 
 var dict_ally : Dictionary
 
-const max_enemies : int = 6 # el numero de enemigos va del 4 al 6
-const max_allies : int = 3 # el num de aliados va dl 1 al 3
+const max_enemies : int = 6 #el numero de enemigos va del 4 al 6
+const max_allies : int = 3 #el num de aliados va dl 1 al 3
 const muerto: bool = true
 
 var criatures = [
@@ -47,7 +47,7 @@ var movementTypes = [1, 2, 3]
 
 var movementDamage = [40, 35, 45]
 
-# Called when the node enters the scene tree for the first time.
+#Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	database = SQLite.new() #Creamos la Base de datos
 	database.path="res://data.db" #Creamos el archivo data
@@ -57,6 +57,7 @@ func _ready() -> void:
 	insertTypes()
 	insertMovements()
 	insertCriatures()
+	
 	$TextBox.hide()
 	$PanelAttacks.hide()
 	
@@ -104,7 +105,7 @@ func createTable() -> void:
 	
 func insertCriatures() -> void:
 	var existentes = database.select_rows("criatures", "id", ["1=1"])
-	if existentes.size() > 0:  #== criatures.size():
+	if existentes.size() > 0: 
 		print("La tabla ya tiene criaturas.")
 		return
 	for i in range(criatures.size()):
@@ -142,14 +143,13 @@ func getCriature(id_a_buscar: int) -> Dictionary:
 				"num": id_a_buscar
 			}
 			
-			print("✅ Movimiento único encontrado para ID", id_a_buscar, ":", criature_details)
+			print("Movimiento único encontrado para ID", id_a_buscar, ":", criature_details)
 			return criature_details
 		else:
 			print("No se encontró la criatura con ID:", id_a_buscar)
 			return {}
 	else:
-		# La ejecución de la consulta falló (error de conexión o SQL)
-		print("❌ ERROR en la consulta de base de datos. Query:", query)
+		print("ERROR en la consulta de base de datos. Query:", query)
 		return {}
 
 func getMovementEnemy(numId: int) -> Dictionary:
@@ -164,11 +164,9 @@ func getMovement(id_a_buscar: int) -> Dictionary:
 					inner join type t on t.id = c.id_type
 					inner join movements m on m.type_id = c.id_type
 					where c.id = " + str(id_a_buscar)
-	
 	var query_success = database.query(query)
 	if query_success == true:
 		var result_data = database.query_result
-		
 		if result_data.size() > 0:
 			# 1. Obtenemos la única fila de resultados (que es un Dictionary)
 			var row: Dictionary = result_data[0]
@@ -183,13 +181,13 @@ func getMovement(id_a_buscar: int) -> Dictionary:
 				"damage": move_damage
 			}
 			
-			print("✅ Movimiento único encontrado para ID", id_a_buscar, ":", movement_details)
+			print("Movimiento único encontrado para ID", id_a_buscar, ":", movement_details)
 			return movement_details
 		else:
 			print("No se encontró la criatura con ID:", id_a_buscar)
 			return {}
 	else:
-		print("❌ ERROR en la consulta de base de datos. Query:", query)
+		print("ERROR en la consulta de base de datos. Query:", query)
 		return {}
 
 func insertTypes() -> void:
@@ -225,7 +223,6 @@ func load_next_enemy() -> void:
 		numEnemy = 4
 	else:
 		numEnemy = dict_enemy["num"] + 1
-	
 	dict_enemy = getEnemy(numEnemy)
 	Enemy.texture = load("res://Assets/Criaturas/" + dict_enemy["image"])
 	dict_enemy["current_hp"] = dict_enemy["hp"]
@@ -242,7 +239,6 @@ func load_next_ally() -> void:
 		numAlly = 1
 	else:
 		numAlly = dict_ally["num"] + 1
-	
 	dict_ally = getAlly(numAlly)
 	Ally.texture = load("res://Assets/Criaturas/" + dict_ally["image"])
 	dict_ally["current_hp"] = dict_ally["hp"]
@@ -252,24 +248,18 @@ func load_next_ally() -> void:
 	dict_ally["dict_movement"] =  getMovementAlly(dict_ally["num"])
 
 func turn_ally() -> int:
-	# sacar una imagen de trueno desde el enemigo al aliado 
-	
 	# esto es para que no pueda pulsar una tecla para saltarse los textos
 	puede_pulsar = false
-	
 	# actualizamos con daños al enemigo
 	dict_enemy["current_hp"] = max(0, dict_enemy["current_hp"] - dict_ally["dict_movement"]["damage"])
 	progress_bar_enemy.get_node("hp").text = "HP: %d/%d" % [dict_enemy["current_hp"], dict_enemy["hp"]]
 	progress_bar_enemy.value = dict_enemy["current_hp"]
-	
 	if dict_enemy["current_hp"] == 0 :
 		if dict_enemy["num"] == max_enemies:
 			GameManager.repetir = true
-			# === ZONA DE VICTORIA Y RETORNO ===
 			texto("¡Has ganado el combate!")
 			await get_tree().create_timer(1.5).timeout
-			
-			# 🚨 USAR la ruta almacenada en el GameManager
+			#Uso la ruta almacenada en el GameManager
 			if GameManager.escena_de_retorno != "":
 				get_tree().change_scene_to_file(GameManager.escena_de_retorno)
 			else:
@@ -283,26 +273,19 @@ func turn_ally() -> int:
 			# esto es para que pueda pulsar una tecla para saltarse los textos
 			puede_pulsar = true
 			return muerto
-	
 	texto("El enemigo ha recibido daño")
 	await get_tree().create_timer(1.25).timeout
-
 	# esto es para que pueda pulsar una tecla para saltarse los textos
 	puede_pulsar = true
-
 	return !muerto
 
 func turn_enemy() -> void:
 	texto("Enemigo Jose: Te vas a enterar!!")
 	await get_tree().create_timer(1.25).timeout
-
 	# actualizamos con daños al Aliado
 	dict_ally["current_hp"] = max(0, dict_ally["current_hp"] - dict_enemy["dict_movement"]["damage"])
 	progress_bar_ally.get_node("hp").text = "HP: %d/%d" % [dict_ally["current_hp"], dict_ally["hp"]]
 	progress_bar_ally.value = dict_ally["current_hp"]
-	
-	# sacar una imagen de trueno desde el aliado al enemigo
-	
 	if dict_ally["current_hp"] == 0 :
 		if dict_ally["num"] == max_allies:
 			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
@@ -314,9 +297,8 @@ func turn_enemy() -> void:
 			
 	$TextBox.hide()
 	emit_signal("textboxClosed")
-	
+
 func _on_button_pressed() -> void:
 	var esta_muerto = await turn_ally() # Retorna si ha muerto o no
-	
 	if !esta_muerto:
 		turn_enemy()
